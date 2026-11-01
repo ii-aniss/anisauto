@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AniissAuto — a world-class automotive showroom with 40+ marques, 400+ vehicles, transparent pricing, financing and concierge delivery.">
+  <meta name="theme-color" content="#0A0D12">
+  <title>AniissAuto — Exceptional automobiles, curated</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to content</a>
+
+  <div class="announcement" id="announcementBar" hidden>
+    <div class="container announcement-inner">
+      <span id="announcementText"></span>
+      <button class="announcement-close" id="announcementClose" aria-label="Dismiss announcement" type="button">&times;</button>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#/" aria-label="AniissAuto home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M7 39.5 19.1 8.5h9.8L41 39.5h-9.2l-2.1-6.2H18.3l-2.1 6.2H7Z" fill="currentColor"/>
+            <path d="m20.6 26.5 3.4-9.9 3.4 9.9h-6.8Z" fill="#0A0D12"/>
+            <path d="M4 39.5h33.5" stroke="currentColor" stroke-width="2.2" opacity=".5"/>
+          </svg>
+        </span>
+        <span class="brand-word">Aniiss<span>Auto</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <a href="#/" data-nav="home">Home</a>
+        <a href="#/inventory" data-nav="inventory">Inventory</a>
+        <a href="#/brands" data-nav="brands">Brands</a>
+        <a href="#/about" data-nav="about">About</a>
+        <a href="#/contact" data-nav="contact">Contact</a>
+        <div class="mobile-nav-extra" id="mobileNavExtra"></div>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn search-jump" href="#/inventory" aria-label="Search the showroom" title="Search inventory">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+        </a>
+        <div class="account-area" id="accountArea"></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <div class="route-loading">
+      <div class="spinner"></div>
+      <p>Preparing the showroom…</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#/" aria-label="AniissAuto home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M7 39.5 19.1 8.5h9.8L41 39.5h-9.2l-2.1-6.2H18.3l-2.1 6.2H7Z" fill="currentColor"/>
+              <path d="m20.6 26.5 3.4-9.9 3.4 9.9h-6.8Z" fill="#0A0D12"/>
+            </svg>
+          </span>
+          <span class="brand-word">Aniiss<span>Auto</span></span>
+        </a>
+        <p id="footerTagline">The world's finest automobiles, curated under one roof.</p>
+        <div class="footer-socials" aria-label="Social media">
+          <a href="#/contact" aria-label="Instagram">IG</a>
+          <a href="#/contact" aria-label="X">X</a>
+          <a href="#/contact" aria-label="YouTube">YT</a>
+          <a href="#/contact" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <a href="#/inventory">All inventory</a>
+        <a href="#/inventory?category=SUV">SUV &amp; crossover</a>
+        <a href="#/inventory?category=Sports">Performance</a>
+        <a href="#/inventory?fuel=Electric">Electric</a>
+        <a href="#/brands">The marques</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Experience</h3>
+        <a href="#/about">Our story</a>
+        <button type="button" class="footer-link" data-testdrive>Book a test drive</button>
+        <a href="#/account?tab=orders">My reservations</a>
+        <a href="#/contact">Financing &amp; trade-in</a>
+        <a href="#/contact">Concierge delivery</a>
+      </div>
+
+      <div class="footer-col footer-visit">
+        <h3>Visit the showroom</h3>
+        <p><span class="footer-label">Address</span><span id="footerAddress">88 Velocity Boulevard, Beverly Hills, CA</span></p>
+        <p><span class="footer-label">Phone</span><a id="footerPhone" href="tel:+15550182026">+1 (555) 018-2026</a></p>
+        <p><span class="footer-label">Email</span><a id="footerEmail" href="mailto:hello@aniissauto.com">hello@aniissauto.com</a></p>
+        <p><span class="footer-label">Hours</span><span id="footerHours">Mon–Sat 9–8 · Sun 10–5</span></p>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3>First access</h3>
+        <p>New arrivals, private events and market notes — once a month, never noisy.</p>
+        <form class="newsletter-form" id="footerNewsletter" novalidate>
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input type="email" id="newsletterEmail" name="email" placeholder="you@domain.com" autocomplete="email" required>
+          <button class="btn btn-gold" type="submit">Join</button>
+        </form>
+        <p class="form-note" id="newsletterNote" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="footer-watermark" aria-hidden="true">ANIISSAUTO</div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="footerYear">2026</span> AniissAuto. All rights reserved.</p>
+      <div class="footer-legal">
+        <button type="button" class="footer-link" data-legal="privacy">Privacy policy</button>
+        <button type="button" class="footer-link" data-legal="terms">Terms of sale</button>
+        <a href="#/contact">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-root" id="modalRoot"></div>
+  <div class="toast-root" id="toastRoot" aria-live="polite" aria-atomic="true"></div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+.account-area { position: relative; }
+.account-area .account-menu {
+  top: calc(100% + 12px);
+  right: 0;
+}
+
+.account-btn { color: var(--text); }
+.account-btn .chev { transition: transform var(--transition); }
+.account-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+
+.mobile-nav-extra .btn { justify-content: center; }
+
+.detail-actions { grid-template-columns: 1fr auto auto auto; }
+
+.payment-summary {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.018);
+  overflow: hidden;
+}
+.payment-summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--line);
+  font-size: 11.5px;
+}
+.payment-summary > div:last-child { border-bottom: 0; }
+.payment-summary span { color: var(--faint); }
+.payment-summary strong { color: var(--text); font-size: 12.5px; font-weight: 600; }
+.payment-summary > div:last-child strong { color: var(--gold); }
+
+.order-row { color: inherit; transition: border-color var(--transition); }
+a.order-row:hover .order-main h3 { color: var(--gold); }
+.order-row .status-chip { margin-right: 2px; }
+.order-empty > svg {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 12px;
+  color: var(--gold);
+}
+.order-empty .btn { margin-top: 4px; }
+
+.account-card .empty-state {
+  padding: 44px 20px;
+  border: 0;
+  background: transparent;
+}
+.account-card .empty-state-icon { width: 50px; height: 50px; margin-bottom: 14px; }
+
+.review-list .empty-state {
+  padding: 48px 24px;
+}
+.review-list .empty-state-icon { width: 48px; height: 48px; margin-bottom: 14px; }
+.review-form .form-status { margin-bottom: 0; }
+.review-form .btn { margin-top: 2px; }
+
+.auth-demo-note { display: flex; align-items: flex-start; gap: 8px; }
+.auth-demo-note svg { width: 13px; height: 13px; flex: none; margin-top: 1px; color: var(--gold); }
+
+.page-btn[aria-disabled="true"] { pointer-events: none; }
+.brand-tile .brand-tile-foot { margin-top: auto; }
+.page-hero .eyebrow { max-width: 100%; }
+
+.inventory-grid .empty-state { background: rgba(255, 255, 255, 0.012); }
+
+@media (max-width: 960px) {
+  .account-area .account-menu {
+    right: 0;
+    top: calc(100% + 10px);
+  }
+}
+
+@media (max-width: 620px) {
+  .detail-actions { grid-template-columns: 1fr 1fr auto auto; }
+  .detail-actions .btn { width: 100%; }
+  .account-area .account-menu { width: min(238px, calc(100vw - 32px)); }
+}
+
+@media (max-width: 480px) {
+  .detail-actions { grid-template-columns: 1fr 1fr; }
+  .detail-action-icon { width: 100%; border-radius: 999px; }
+}

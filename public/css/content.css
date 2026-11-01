@@ -1,0 +1,336 @@
+.brands-page { padding: 56px 0 100px; }
+.brands-page-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.brand-tile {
+  position: relative;
+  min-height: 210px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(ellipse 80% 90% at 100% 0%, rgba(255, 255, 255, 0.035), transparent 60%),
+    linear-gradient(160deg, #121821, #0b1016);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.brand-tile::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -60px;
+  bottom: -60px;
+  border-radius: 50%;
+  background: var(--brand, #d8aa5b);
+  opacity: 0.09;
+  filter: blur(5px);
+}
+.brand-tile:hover { transform: translateY(-4px); border-color: rgba(216, 170, 91, 0.3); }
+.brand-tile-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.brand-tile .brand-monogram { width: 46px; height: 46px; }
+.brand-tile-country {
+  color: var(--faint);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-align: right;
+}
+.brand-tile h3 { margin-top: 26px; font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; }
+.brand-tile p { color: var(--faint); font-size: 10.5px; margin-top: 4px; max-width: 220px; }
+.brand-tile-foot {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+.brand-tile-foot span { color: var(--muted); font-size: 10px; }
+.brand-tile-foot strong { color: var(--gold); font-weight: 600; }
+.brand-tile-arrow {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--faint);
+  transition: all var(--transition);
+}
+.brand-tile-arrow svg { width: 13px; height: 13px; }
+.brand-tile:hover .brand-tile-arrow {
+  color: #0a0d12;
+  border-color: var(--gold);
+  background: var(--gold);
+  transform: rotate(-35deg);
+}
+
+.about-page { padding-bottom: 100px; }
+.about-story {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+  padding: 90px 0;
+}
+.about-story-art {
+  position: relative;
+  aspect-ratio: 1.08;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 65% 65% at 50% 55%, rgba(216, 170, 91, 0.18), transparent 65%),
+    linear-gradient(155deg, #1a212b, #090d12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-story-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle, #000, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle, #000, transparent 75%);
+}
+.about-story-art .car-art { background: transparent; width: 120%; }
+.about-story-art .car-art-brand { display: none; }
+.about-stamp {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 3;
+  width: 94px;
+  height: 94px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(216, 170, 91, 0.45);
+  border-radius: 50%;
+  color: var(--gold);
+  text-align: center;
+  background: rgba(8, 11, 16, 0.55);
+  backdrop-filter: blur(6px);
+}
+.about-stamp span { font-family: var(--font-display); font-size: 1.5rem; line-height: 1; }
+.about-stamp small { font-size: 6.5px; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 4px; }
+.about-copy p { color: var(--muted); margin-top: 18px; font-size: 14.5px; line-height: 1.8; max-width: 540px; }
+.about-values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0 0 90px; }
+.value-card {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.value-card .num { color: var(--gold); font-family: var(--font-display); font-size: 1.5rem; }
+.value-card h3 { margin-top: 20px; font-size: 13px; font-weight: 600; }
+.value-card p { color: var(--faint); font-size: 11.5px; line-height: 1.65; margin-top: 7px; }
+.about-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 38px 0;
+  border-block: 1px solid var(--line);
+  margin-bottom: 90px;
+}
+.about-number { padding: 0 30px; border-right: 1px solid var(--line); }
+.about-number:last-child { border-right: 0; }
+.about-number strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.7rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--gold);
+}
+.about-number span {
+  display: block;
+  margin-top: 8px;
+  color: var(--faint);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.team-card {
+  padding: 27px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, #111720, #0c1117);
+  text-align: center;
+}
+.team-avatar {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.16), transparent 55%),
+    linear-gradient(135deg, #26303d, #11161d);
+  border: 1px solid var(--line-strong);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+.team-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 400; }
+.team-card span {
+  display: block;
+  color: var(--gold);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.team-card p { color: var(--faint); font-size: 11px; line-height: 1.6; margin-top: 12px; }
+
+.contact-page { padding: 56px 0 100px; }
+.contact-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+.contact-info .section-title { font-size: clamp(2rem, 3.3vw, 2.8rem); }
+.contact-info > p { color: var(--muted); font-size: 13px; margin-top: 14px; max-width: 400px; }
+.contact-cards {
+  margin-top: 34px;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.contact-card { display: flex; gap: 15px; padding: 22px; background: var(--surface); }
+.contact-card-icon {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  color: var(--gold);
+}
+.contact-card-icon svg { width: 17px; height: 17px; }
+.contact-card h3 {
+  color: var(--faint);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.contact-card p, .contact-card a { color: var(--text); font-size: 12.5px; line-height: 1.6; }
+.contact-card a:hover { color: var(--gold); }
+.contact-map {
+  margin-top: 18px;
+  position: relative;
+  height: 200px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 60% 40%, rgba(216, 170, 91, 0.12), transparent 35%),
+    linear-gradient(#0d1219, #0a0e14);
+}
+.contact-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+  transform: rotate(-8deg) scale(1.2);
+}
+.contact-map::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 24px;
+  height: 24px;
+  margin: -12px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--gold);
+  transform: rotate(-45deg);
+  box-shadow: 0 0 0 8px rgba(216, 170, 91, 0.15);
+}
+.contact-map span {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.contact-form-panel {
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #121822, #0c1117);
+}
+.contact-form-panel h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; }
+.contact-form-panel > p { color: var(--faint); font-size: 11.5px; margin-top: 7px; margin-bottom: 26px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-status { min-height: 18px; margin-top: 12px; font-size: 11px; color: var(--green); }
+.form-status.error { color: var(--red); }
+.contact-form-panel .btn { margin-top: 10px; }
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 14px;
+  color: var(--faint);
+  font-size: 9.5px;
+  line-height: 1.55;
+}
+.form-consent input { margin-top: 2px; accent-color: var(--gold); }
+.field-hint { color: var(--faint); font-size: 9.5px; }
+
+@media (max-width: 1100px) {
+  .brands-page-grid { grid-template-columns: repeat(3, 1fr); }
+  .about-story { grid-template-columns: 1fr; gap: 40px; }
+  .about-story-art { max-width: 620px; }
+  .about-values { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .about-numbers { grid-template-columns: 1fr 1fr; gap: 26px 0; }
+  .about-number:nth-child(2) { border-right: 0; }
+  .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+  .contact-info { max-width: 640px; }
+}
+
+@media (max-width: 700px) {
+  .brands-page-grid { grid-template-columns: repeat(2, 1fr); }
+  .brands-page { padding: 36px 0 70px; }
+  .about-story { padding: 52px 0; }
+  .about-numbers { margin-bottom: 60px; }
+  .contact-page { padding: 36px 0 70px; }
+  .contact-form-panel { padding: 26px; }
+}
+
+@media (max-width: 540px) {
+  .about-values, .team-grid { grid-template-columns: 1fr; }
+  .about-numbers { grid-template-columns: 1fr; }
+  .about-number { border-right: 0; padding: 0; }
+  .form-grid { grid-template-columns: 1fr; }
+  .brand-tile { min-height: 190px; padding: 20px; }
+  .brand-tile h3 { margin-top: 20px; font-size: 1.3rem; }
+}
